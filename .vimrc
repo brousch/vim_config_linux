@@ -13,3 +13,6 @@ filetype plugin indent on
 
 " Automatically give executable permissions if file begins with #! and contains '/bin/' in the path.
 au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
