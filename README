@@ -1,0 +1,7 @@
+My Vim configuration for Linux.
+
+To use it:
+    1. mkdir ~/configs
+    2. git clone git@github.com:brousch/vim_config_linux.git ~/configs/vim
+    3. ~/configs/vim/install.sh
+
