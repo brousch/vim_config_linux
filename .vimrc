@@ -14,5 +14,12 @@ filetype plugin indent on
 " Automatically give executable permissions if file begins with #! and contains '/bin/' in the path.
 au bufwritepost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod a+x <afile> | endif | endif
 
+" Colors characters beyond 80 characters
+if exists('+colorcolumn')
+    set colorcolumn=80
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
